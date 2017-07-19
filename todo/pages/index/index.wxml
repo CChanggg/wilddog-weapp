@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="container">
+<view class="section">
+  <button bindtap="doLogin">登录</button>
+  <view>
+    <text>{{userText}}</text>
+  </view>
+</view>
+<view class="section">
+  <label>输入一个todo项</label>
+  <input bindinput="bindkeyInput" value="{{current}}"/><!-- 数据绑定界面 -->
+  <button bindtap="addItem">增加</button>
+</view>
+<view class="section"  wx:for="{{todos}}" wx:key="{{index}}">
+  <text class="inline">{{item.text}}</text>
+  <button class="inline" style="float:right" bindtap="deleteItem"
+  data-key="{{item.key}}">删除</button>
+</view>
+</view>
